@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Trabajos realizados en Alfa PC: reparaciones y optimizaciones de computadoras." />
+	<title>Trabajos | Alfa PC</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="estilos.css" />
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+</head>
+<body>
+	<header class="encabezado">
+		<nav class="nav contenedor">
+			<a href="index.html" class="logo"><img src="img/logo_alfa_pc.png" alt="Alfa PC" /></a>
+			<button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+			<ul class="nav-links" id="navLinks">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="servicios.html">Servicios</a></li>
+				<li><a href="trabajos.html">Trabajos</a></li>
+				<li><a href="proceso.html">Proceso</a></li>
+				<li><a href="sobre-mi.html">Sobre mí</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+				<li><a class="nav-whatsapp" href="https://wa.me/59892500216" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.47 0 .12 5.35.12 11.94c0 2.1.55 4.16 1.59 5.98L0 24l6.24-1.64a11.87 11.87 0 0 0 5.82 1.48h.01c6.58 0 11.93-5.35 11.93-11.94 0-3.19-1.24-6.2-3.48-8.42ZM12.07 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.7.97.99-3.6-.23-.37a9.84 9.84 0 0 1-1.5-5.27c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.79 9.79 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.85 9.85Zm5.4-7.37c-.3-.15-1.8-.89-2.08-.99-.28-.11-.48-.15-.68.15-.2.3-.78.99-.96 1.19-.17.2-.35.22-.65.08-.3-.15-1.24-.45-2.36-1.45a8.86 8.86 0 0 1-1.64-2.03c-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.07-.8.38-.28.3-1.05 1.03-1.05 2.52 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.24 5.14 4.54.72.31 1.28.49 1.72.63.72.23 1.37.2 1.88.12.57-.09 1.8-.73 2.06-1.44.25-.71.25-1.32.18-1.44-.08-.13-.28-.2-.58-.35Z"/></svg><span class="sr-only">WhatsApp</span></a></li>
+			</ul>
+		</nav>
+
+		<section class="pagina-cabecera contenedor">
+			<p class="etiqueta">Trabajos</p>
+			<h1>Resultados de reparaciones y mejoras</h1>
+			<p>Ejemplos de equipos atendidos por Alfredo Carro en Alfa PC.</p>
+		</section>
+	</header>
+
+	<main class="seccion contenedor contenido-pagina">
+		<div class="galeria-grid">
+			<img src="img/trabajo-reparacion-01.jpg" alt="Mesa de diagnóstico y reparación de computadora" />
+			<img src="img/trabajo-reparacion-02.jpg" alt="Laptop con herramientas de mantenimiento" />
+			<img src="img/trabajo-reparacion-03.jpg" alt="Técnico revisando componentes internos" />
+			<img src="img/trabajo-reparacion-05.jpg" alt="Trabajo de mantenimiento de hardware" />
+		</div>
+
+		<section class="seccion-mini">
+			<h2>Tipos de trabajo frecuentes</h2>
+			<div class="grid-servicios">
+				<article class="tarjeta-servicio">
+					<img src="img/trabajo-reparacion-06.jpg" alt="Diagnóstico completo" />
+					<h3>Diagnóstico y corrección</h3>
+					<p>Identificación de fallas de arranque, lentitud extrema y errores críticos del sistema.</p>
+				</article>
+				<article class="tarjeta-servicio">
+					<img src="img/trabajo-reparacion-07.jpg" alt="Mantenimiento interno" />
+					<h3>Mantenimiento interno</h3>
+					<p>Limpieza y ajuste de hardware para reducir temperaturas y mejorar estabilidad.</p>
+				</article>
+				<article class="tarjeta-servicio">
+					<img src="img/trabajo-reparacion-08.jpg" alt="Equipo mejorado" />
+					<h3>Upgrade de rendimiento</h3>
+					<p>Instalación de SSD y RAM para acelerar arranque, carga de programas y multitarea.</p>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="pie">
+		<div class="contenedor pie-contenido">
+			<p>© <span id="anio"></span> Técnico en Informática Alfredo Carro</p>
+		</div>
+	</footer>
+
+	<script src="app.js"></script>
+</body>
+</html>
