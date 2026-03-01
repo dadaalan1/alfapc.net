@@ -31,15 +31,54 @@ if (anio) {
 }
 
 if (navLinks) {
-	const rutaActual = window.location.pathname.split('/').pop() || 'index.html';
+	const normalizarRuta = (ruta) => {
+		let rutaLimpia = decodeURIComponent((ruta || '').trim()).toLowerCase();
+		rutaLimpia = rutaLimpia.split('?')[0].split('#')[0];
+
+		if (!rutaLimpia || rutaLimpia === '/') {
+			return 'index';
+		}
+
+		const segmentos = rutaLimpia.split('/').filter(Boolean);
+		let ultimoSegmento = segmentos[segmentos.length - 1] || 'index';
+
+		if (!ultimoSegmento || ultimoSegmento === '/') {
+			ultimoSegmento = 'index';
+		}
+
+		if (ultimoSegmento.endsWith('/')) {
+			ultimoSegmento = ultimoSegmento.slice(0, -1);
+		}
+
+		if (!ultimoSegmento || ultimoSegmento === '') {
+			ultimoSegmento = 'index';
+		}
+
+		return ultimoSegmento.replace(/\.html?$/, '') || 'index';
+	};
+
+	const rutaActual = normalizarRuta(window.location.pathname);
 
 	navLinks.querySelectorAll('a').forEach((enlace) => {
 		const href = enlace.getAttribute('href') || '';
-		if (!href || href.startsWith('http') || href.startsWith('#')) {
+		if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
 			return;
 		}
 
-		if (href === rutaActual || (rutaActual === '' && href === 'index.html')) {
+		let destino;
+		try {
+			destino = new URL(href, window.location.href);
+		} catch {
+			return;
+		}
+
+		if (destino.origin !== window.location.origin) {
+			return;
+		}
+
+		const rutaEnlace = normalizarRuta(destino.pathname);
+
+		if (rutaEnlace === rutaActual) {
 			enlace.classList.add('activo-pagina');
 			enlace.setAttribute('aria-current', 'page');
 		}
